@@ -98,8 +98,8 @@ such as \code{thin}, \code{algorithm}, \code{cores}, etc.}
 \value{
 A \code{list} with three components, if \code{diagnostics=FALSE}:
 \item{HDI}{A matrix of HDI lower and upper bounds, whose row names are the condition levels.}
-\item{\verb{posterior means}}{The posterior condition means when using \code{method} in \code{1:6}.}
-\item{\verb{arithmetic means}}{Or, the arithmetic condition means when using \code{method=0}.}
+\item{posterior means}{The posterior condition means when using \code{method} in \code{1:6}.}
+\item{arithmetic means}{Or, the arithmetic condition means when using \code{method=0}.}
 \item{width}{The HDI width, which is the half-length from the lower bound to the upper bound.}
 A \code{list} with four components including an additional object of S4 class representing the fitted results, if \code{diagnostics=TRUE}.
 }
@@ -130,30 +130,30 @@ subject under the \eqn{i}-th level of the experimental manipulation;
 \eqn{\epsilon_{ij}} are independent and identically distributed.
 The effects \eqn{t_i} and \eqn{b_j} are both standardized relative to the standard deviation of the error \eqn{\sigma_\epsilon} and become dimensionless (Rouder et al., 2012).
 
-An assumption articulated in \code{method=0} is the Jeffreys prior for the condition means \eqn{\mu_i} and residual variance \eqn{\sigma_\epsilon^2} (Nathoo et al., 2018).
+An assumption articulated in "method=0" is the Jeffreys prior for the condition means \eqn{\mu_i} and residual variance \eqn{\sigma_\epsilon^2} (Nathoo et al., 2018).
 
-Priors used in \code{method=1} are the Jeffreys prior for the overall mean \eqn{\mu} and residual variance,
+Priors used in "method=1" are the Jeffreys prior for the overall mean \eqn{\mu} and residual variance,
 a \eqn{g}-prior structure for standardized effects (\eqn{t_i ~ N(0, g_t)}, \eqn{b_j ~ N(0, g_b)}),
 and independent scaled inverse-chi-square priors with one degree of freedom for
 the scale hyperparameters of the \eqn{g}-priors (\eqn{g_t ~ Scale-inv-\chi^2(1, h_t^2)}, \eqn{g_b ~ Scale-inv-\chi^2(1, h_b^2)}).
 
-Priors used in \code{method=2} are the Jeffreys prior for the overall mean and residual variance,
+Priors used in "method=2" are the Jeffreys prior for the overall mean and residual variance,
 a normal distribution for (not standardized) effects (\eqn{\sigma_\epsilon t_i ~ N(0, g_t)}, \eqn{\sigma_\epsilon b_j ~ N(0, g_b)}),
 and the standard uniform distribution for
 the square root of \eqn{g} parameter (\eqn{sqrt(g_t) ~ Unif(0, 1)}, \eqn{sqrt(g_b) ~ Unif(0, 1)}).
 
-Priors used in \code{method=3} are the Jeffreys prior for the overall mean and residual variance,
+Priors used in "method=3" are the Jeffreys prior for the overall mean and residual variance,
 a normal distribution for (not standardized) effects,
 and the standard half-Cauchy distribution for the square root of \eqn{g} parameter
 (\eqn{sqrt(g_t) ~ Half-Cauchy(0, 1)}, \eqn{sqrt(g_b) ~ Half-Cauchy(0, 1)}).
 
-Priors used in \code{method=4} are the Jeffreys prior for the condition means and residual variance,
+Priors used in "method=4" are the Jeffreys prior for the condition means and residual variance,
 a \eqn{g}-prior structure for standardized subject-specific random effects, and independent scaled inverse-chi-square priors with one degree of freedom for the scale hyperparameters of the \eqn{g}-priors (Heck, 2019).
 
-Priors used in \code{method=5} are the Jeffreys prior for the condition means and residual variance,
+Priors used in "method=5" are the Jeffreys prior for the condition means and residual variance,
 a normal distribution for (not standardized) subject-specific random effects, and the standard uniform distribution for the square root of \eqn{g} parameter.
 
-Priors used in \code{method=6} are the Jeffreys prior for the condition means and residual variance,
+Priors used in "method=6" are the Jeffreys prior for the condition means and residual variance,
 a normal distribution for (not standardized) subject-specific random effects, and the standard half-Cauchy distribution for the square root of \eqn{g} parameter.
 }
 \examples{
